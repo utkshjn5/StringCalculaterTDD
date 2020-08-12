@@ -4,10 +4,16 @@ package com.app.stringcalculator;
 import static org.junit.Assert.*;
 
 import org.hamcrest.Matchers;
+import org.junit.Before;
 import org.junit.Test;
 
 public class StringCalculatorTest {
+	StringCalculator calculator;
 	
+	@Before
+	public void intialize() {
+		calculator = new StringCalculator();
+	}
 	@SuppressWarnings("deprecation")
 	@Test
 	public void returnZeroWhenEmptyStringIsProvided() {
@@ -18,8 +24,19 @@ public class StringCalculatorTest {
 		int output = calculator.Add(input);
 		//Then
 		assertThat(output,Matchers.equalTo(0));
-		
 	}
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void returnSameValueWhenSingleStringIsProvided() {
+		//Given
+		String input = "1";
+		//when
+		int output = calculator.Add(input);
+		//Then
+		assertThat(output,Matchers.equalTo(1));
+	}
+
 	
 	
 
