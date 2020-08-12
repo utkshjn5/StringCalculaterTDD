@@ -36,7 +36,17 @@ public class StringCalculatorTest {
 		//Then
 		assertThat(output,Matchers.equalTo(1));
 	}
-
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void whenTwoCommaSeperatedValuesProvidedThenReturnSum() {
+		//Given
+		String input = "1,2";
+		//when
+		int output = calculator.Add(input);
+		//Then
+		assertThat(output,Matchers.equalTo(3));
+	}
 	
 	
 
